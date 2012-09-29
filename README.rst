@@ -8,7 +8,7 @@ To start a new project with this template::
 
 {% endif %}
 
-{{ project_name }}|title
+{{ project_name|title }}
 ========================
 
 Below you will find basic setup and deployment instructions for the
