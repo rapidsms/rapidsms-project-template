@@ -214,3 +214,5 @@ RAPIDSMS_TABS = [
     ("rapidsms.contrib.scheduler.views.index",              "Event Scheduler"),
     ("rapidsms.contrib.httptester.views.generate_identity", "Message Tester"),
 ]
+
+LOGIN_REDIRECT_URL = '/'
