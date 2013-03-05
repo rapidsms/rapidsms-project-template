@@ -184,16 +184,16 @@ INSTALLED_APPS = (
     # External apps
     "django_nose",
     "djtables",
+    "django_tables2",
+    # RapidSMS
     "rapidsms",
     "rapidsms.contrib.handlers",
     "rapidsms.contrib.default",
-    "rapidsms.contrib.export",
     "rapidsms.contrib.httptester",
     "rapidsms.contrib.locations",
     "rapidsms.contrib.messagelog",
     "rapidsms.contrib.messaging",
     "rapidsms.contrib.registration",
-    "rapidsms.contrib.scheduler",
     "rapidsms.contrib.echo",
 )
 
@@ -202,17 +202,5 @@ INSTALLED_BACKENDS = {
         "ENGINE": "rapidsms.contrib.httptester.backend",
     },
 }
-
-# this rapidsms-specific setting defines which views are linked by the
-# tabbed navigation. when adding an app to INSTALLED_APPS, you may wish
-# to add it here, also, to expose it in the rapidsms ui.
-RAPIDSMS_TABS = [
-    ("rapidsms.contrib.messagelog.views.message_log",       "Message Log"),
-    ("rapidsms.contrib.registration.views.registration",    "Registration"),
-    ("rapidsms.contrib.messaging.views.messaging",          "Messaging"),
-    ("rapidsms.contrib.locations.views.locations",          "Map"),
-    ("rapidsms.contrib.scheduler.views.index",              "Event Scheduler"),
-    ("rapidsms.contrib.httptester.views.generate_identity", "Message Tester"),
-]
 
 LOGIN_REDIRECT_URL = '/'
