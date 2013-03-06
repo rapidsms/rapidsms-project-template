@@ -116,7 +116,7 @@ ROOT_URLCONF = '{{ project_name }}.urls'
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'templates'),
+    os.path.join(PROJECT_PATH, '{{ project_name }}', 'templates'),
 )
 
 FIXTURE_DIRS = (
@@ -188,13 +188,12 @@ INSTALLED_APPS = (
     # RapidSMS
     "rapidsms",
     "rapidsms.contrib.handlers",
-    "rapidsms.contrib.default",
     "rapidsms.contrib.httptester",
-    "rapidsms.contrib.locations",
     "rapidsms.contrib.messagelog",
     "rapidsms.contrib.messaging",
     "rapidsms.contrib.registration",
     "rapidsms.contrib.echo",
+    "rapidsms.contrib.default",  # Must be last
 )
 
 INSTALLED_BACKENDS = {
