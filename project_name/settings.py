@@ -191,6 +191,7 @@ INSTALLED_APPS = (
     "django_nose",
     "djtables",
     "django_tables2",
+    "selectable",
     # RapidSMS
     "rapidsms",
     "rapidsms.contrib.handlers",
