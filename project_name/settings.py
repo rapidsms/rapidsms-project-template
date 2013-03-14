@@ -189,7 +189,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # External apps
     "django_nose",
-    "djtables",
+    #"djtables",  # required by rapidsms.contrib.locations
     "django_tables2",
     "selectable",
     # RapidSMS
