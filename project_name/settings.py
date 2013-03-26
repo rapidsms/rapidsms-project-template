@@ -2,9 +2,15 @@
 
 import os
 
-PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                            os.pardir))
-PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_PATH, os.pardir))
+# The top directory for this project. Contains requirements/, manage.py,
+# and README.rst, a {{ project_name }} directory with settings etc (see
+# PROJECT_PATH), as well as a directory for each Django app added to this
+# project.
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+
+# The directory with this project's templates, settings, urls, static dir,
+# wsgi.py, fixtures, etc.
+PROJECT_PATH = os.path.join(PROJECT_ROOT, '{{ project_name }}')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -50,7 +56,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
+# Example: "/home/media/media.lawrence.com/public/media/"
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'public', 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -61,14 +67,14 @@ MEDIA_URL = '/media/'
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
+# Example: "/home/media/media.lawrence.com/public/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-# Additional locations of static files
+# Additional locations of static files to collect
 STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, 'static'),
 )
@@ -183,18 +189,18 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # External apps
     "django_nose",
-    "djtables",
+    #"djtables",  # required by rapidsms.contrib.locations
+    "django_tables2",
+    "selectable",
+    # RapidSMS
     "rapidsms",
     "rapidsms.contrib.handlers",
-    "rapidsms.contrib.default",
-    "rapidsms.contrib.export",
     "rapidsms.contrib.httptester",
-    "rapidsms.contrib.locations",
     "rapidsms.contrib.messagelog",
     "rapidsms.contrib.messaging",
     "rapidsms.contrib.registration",
-    "rapidsms.contrib.scheduler",
     "rapidsms.contrib.echo",
+    "rapidsms.contrib.default",  # Must be last
 )
 
 INSTALLED_BACKENDS = {
@@ -202,17 +208,5 @@ INSTALLED_BACKENDS = {
         "ENGINE": "rapidsms.contrib.httptester.backend",
     },
 }
-
-# this rapidsms-specific setting defines which views are linked by the
-# tabbed navigation. when adding an app to INSTALLED_APPS, you may wish
-# to add it here, also, to expose it in the rapidsms ui.
-RAPIDSMS_TABS = [
-    ("rapidsms.contrib.messagelog.views.message_log",       "Message Log"),
-    ("rapidsms.contrib.registration.views.registration",    "Registration"),
-    ("rapidsms.contrib.messaging.views.messaging",          "Messaging"),
-    ("rapidsms.contrib.locations.views.locations",          "Map"),
-    ("rapidsms.contrib.scheduler.views.index",              "Event Scheduler"),
-    ("rapidsms.contrib.httptester.views.generate_identity", "Message Tester"),
-]
 
 LOGIN_REDIRECT_URL = '/'
