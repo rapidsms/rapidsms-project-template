@@ -84,7 +84,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -94,7 +94,7 @@ SECRET_KEY = '{{ secret_key }}'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -192,8 +192,10 @@ INSTALLED_APPS = (
     #"djtables",  # required by rapidsms.contrib.locations
     "django_tables2",
     "selectable",
+    "south",
     # RapidSMS
     "rapidsms",
+    "rapidsms.backends.database",
     "rapidsms.contrib.handlers",
     "rapidsms.contrib.httptester",
     "rapidsms.contrib.messagelog",
@@ -205,7 +207,7 @@ INSTALLED_APPS = (
 
 INSTALLED_BACKENDS = {
     "message_tester": {
-        "ENGINE": "rapidsms.contrib.httptester.backend",
+        "ENGINE": "rapidsms.backends.database.DatabaseBackend",
     },
 }
 
