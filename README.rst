@@ -15,7 +15,7 @@ Below you will find basic setup instructions for the ``project_name``
 project. To begin you should have the following applications installed on your
 local development system:
 
-- Python >= 2.6 (2.7 recommended)
+- `Python >= 2.6 (2.7 recommended) <http://www.python.org/getit/>`_
 - `pip >= 1.1 <http://www.pip-installer.org/>`_
 - `virtualenv >= 1.8 <http://www.virtualenv.org/>`_
 
