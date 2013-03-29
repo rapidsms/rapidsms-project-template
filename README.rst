@@ -26,7 +26,17 @@ To setup your local environment you should create a virtualenv and install the
 necessary requirements::
 
     virtualenv --distribute project_name-env
+
+On Posix systems you can activate your environment like this::
+
     source project_name-env/bin/activate
+
+On Windows, you'd use::
+
+    project_name-env\Scripts\activate
+
+Then::
+
     cd project_name
     pip install -r requirements/base.txt
 
