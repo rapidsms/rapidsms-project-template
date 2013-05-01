@@ -129,8 +129,9 @@ FIXTURE_DIRS = (
     os.path.join(PROJECT_PATH, 'fixtures'),
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
+# A sample logging configuration.
+# This logs all rapidsms messages to the file `rapidsms.log`
+# in the project directory.  It also sends an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
@@ -171,7 +172,7 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
-        'blockingrouter': {
+        'rapidsms': {
             'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
