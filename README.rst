@@ -1,3 +1,4 @@
+{% if False %}
 Installation
 ------------
 
@@ -8,7 +9,8 @@ To start a new project with this template::
 Or to use a released version:
     django-admin.py startproject --template=https://github.com/rapidsms/rapidsms-project-template/zipball/release-0.13.0 --extension=py,rst <``project_name``>
 
-``project_name``
+{% endif %}
+{{ project_name|title }}
 ========================
 
 Below you will find basic setup instructions for the ``project_name``
