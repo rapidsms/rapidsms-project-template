@@ -213,3 +213,8 @@ INSTALLED_BACKENDS = {
 }
 
 LOGIN_REDIRECT_URL = '/'
+
+RAPIDSMS_HANDLERS = (
+    'rapidsms.contrib.echo.handlers.echo.EchoHandler',
+    'rapidsms.contrib.echo.handlers.ping.PingHandler',
+)

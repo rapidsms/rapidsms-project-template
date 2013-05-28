@@ -7,7 +7,7 @@ To start a new project with this template::
     django-admin.py startproject --template=https://github.com/rapidsms/rapidsms-project-template/zipball/master --extension=py,rst <project_name>
 
 Or to use a released version:
-    django-admin.py startproject --template=https://github.com/rapidsms/rapidsms-project-template/zipball/release-0.13.0 --extension=py,rst <``project_name``>
+    django-admin.py startproject --template=https://github.com/rapidsms/rapidsms-project-template/zipball/release-0.15.0 --extension=py,rst <``project_name``>
 
 {% endif %}
 {{ project_name|title }}
