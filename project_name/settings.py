@@ -188,7 +188,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.sitemaps',
     # External apps
-    "django_nose",
     "django_tables2",
     "selectable",
     # RapidSMS
